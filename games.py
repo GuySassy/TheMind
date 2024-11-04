@@ -1,7 +1,7 @@
 import gym
 import numpy as np
 import time
-
+import torch
 
 class MultiAgentRevealEnv(gym.Env):
     def __init__(self, n_agents, max_time):
@@ -41,7 +41,7 @@ class MultiAgentRevealEnv(gym.Env):
 
     def step(self, actions):
 
-        rewards = np.zeros(self.n_agents, dtype=np.float32)
+        rewards = torch.zeros(self.n_agents, dtype=torch.float32)
 
         # Find the smallest unrevealed integer
         unrevealed_integers = self.special_integers[~self.reveal_flags]

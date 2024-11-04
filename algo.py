@@ -24,8 +24,8 @@ class QLearningAgent:
         self.gamma = gamma  # Discount factor
         self.epsilon = epsilon  # Exploration rate
 
-    def choose_action(self, state):
-        if np.random.rand() < self.epsilon:
+    def choose_action(self, state, eval=False):
+        if np.random.rand() < self.epsilon and not eval:
             return np.random.choice([0, 1])  # Random action (exploration)
         else:
             with torch.no_grad():
@@ -51,3 +51,5 @@ class QLearningAgent:
         self.optimizer.zero_grad()
         loss.backward()
         self.optimizer.step()
+        print(loss)
+        return loss

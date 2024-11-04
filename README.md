@@ -36,9 +36,4 @@ The Q-function approximation network includes:
 - **Hidden Layers**: Two fully connected layers with ReLU activation for nonlinear transformation.
 - **Output Layer**: Produces Q-values for each action (reveal or no-action).
 
-## Installation
-
-1. Clone this repository:
-   ```bash
-   git clone git@github.com:username/TheMind.git
-   cd TheMind
+## TODO - expand environment to use multiple cards (expand Q function - state is changed (concat) as well)
